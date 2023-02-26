@@ -1,9 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import Admin from './Admin'
-import { store } from './redux'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { store } from './redux';
+import Admin from './Admin';
+import './index.css';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -4,6 +4,7 @@ import { AppDispatch, GetState } from '../store'
 
 export const startLoginWithEmailPasword = (email = '', password = '') => {
     return async (dispatch: AppDispatch, getState: GetState) => {
+
         const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
         localStorage.setItem('token-admin', token);
@@ -11,6 +12,7 @@ export const startLoginWithEmailPasword = (email = '', password = '') => {
         dispatch(onLogin({ token }));
     }
 }
+
 
 export const startCheckAuth = () => {
     return async (dispatch: AppDispatch, getState: GetState) => {
