@@ -1,10 +1,9 @@
 import { FC } from 'react';
 import { Menu } from '@mui/icons-material/';
 import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
-import { useAppSelector } from '../../../hooks/redux/index';
-import { IStyles } from '../../../theme';
-
-const DRAWER_WIDTH = 240;
+import { useAppSelector } from '../hooks';
+import { IStyles } from '../theme';
+import { DRAWER_WIDTH } from '../constants';
 
 const styles: IStyles = {
     appbar: {
@@ -23,11 +22,13 @@ const styles: IStyles = {
     }
 }
 
+
+
 interface Props {
     handleDrawerToggle: () => void;
 }
 
-export const NavbarDash: FC<Props> = ({ handleDrawerToggle }) => {
+export const AppNavBar: FC<Props> = ({ handleDrawerToggle }) => {
 
     const { name } = useAppSelector(state => state.auth);
 
@@ -35,7 +36,7 @@ export const NavbarDash: FC<Props> = ({ handleDrawerToggle }) => {
         <AppBar position="fixed" elevation={0} sx={styles.appbar}>
             <Toolbar sx={styles.toolbar}>
                 <Typography variant='h6' noWrap component='div' color='black' >
-                    {name}
+                    {name} - uid
                 </Typography>
                 <IconButton sx={styles.icon} onClick={handleDrawerToggle} color="inherit">
                     <Menu color='primary' />
@@ -44,5 +45,6 @@ export const NavbarDash: FC<Props> = ({ handleDrawerToggle }) => {
         </AppBar>
     );
 }
+
 
 

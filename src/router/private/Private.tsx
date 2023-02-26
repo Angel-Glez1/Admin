@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { PrivateRoutes } from '../../models';
-
+import { PrivateRoutes } from '../../constants';
 
 const Dashboard = lazy(() => import('../../pages/Dashboard/Dashboard'));
 const Sandbox = lazy(() => import('../../pages/Sandbox/Sandbox'));
@@ -12,7 +11,6 @@ const Private = () => {
         <Routes>
             <Route path={`${PrivateRoutes.DASHBOARD}/*`} element={<Dashboard />} />
             <Route path={`${PrivateRoutes.SANBOX}/*`} element={<Sandbox />} />
-
             <Route path="/*" element={<Navigate to={PrivateRoutes.DASHBOARD} />} />
         </Routes>
     )

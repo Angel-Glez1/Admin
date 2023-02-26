@@ -1,8 +1,7 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { DashboardRoutes } from '../../models';
+import { DashboardRoutes } from '../../constants';
 import { DashLayout } from './layouts';
-
 
 const Notes = lazy(() => import('./Notes/Notes'));
 const Calendar = lazy(() => import('./Calendar/Calendar'));
@@ -21,5 +20,6 @@ const Dashboard = () => {
         </DashLayout>
     )
 }
+
 
 export default Dashboard;

@@ -13,4 +13,3 @@ export const DashboardRoutes = {
     FINANCES: 'finances',
     CALENDAR: 'calendar',
 }
-
