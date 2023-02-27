@@ -1,11 +1,5 @@
 import { Roles } from './roles';
-
-
-export enum StatusAuth {
-    AUTHENTICATED = 'authenticated',
-    NOT_AUTHENTICATED = 'not-authenticated',
-    CHECKING = 'checking',
-}
+import { StatusAuth } from './statusAuth';
 
 
 export interface User {

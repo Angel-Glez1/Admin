@@ -36,7 +36,7 @@ export const AppNavBar: FC<Props> = ({ handleDrawerToggle }) => {
         <AppBar position="fixed" elevation={0} sx={styles.appbar}>
             <Toolbar sx={styles.toolbar}>
                 <Typography variant='h6' noWrap component='div' color='black' >
-                    {name} - uid
+                    {name}
                 </Typography>
                 <IconButton sx={styles.icon} onClick={handleDrawerToggle} color="inherit">
                     <Menu color='primary' />
