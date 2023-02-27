@@ -41,8 +41,16 @@ export const DashLayout: FC<Props> = ({ children }) => {
             <AppNavBar handleDrawerToggle={handleDrawerToggle} />
 
             <Box component='nav' sx={styles.sidebarContainer}>
-                <AppSideBar variant='permanent' sx={styles.sidebarDesktop} />
-                <AppSideBar variant='temporary' open={isVisibleDrawer} onClose={handleDrawerToggle} sx={styles.sidebarMobiel} />
+                <AppSideBar
+                    variant='permanent'
+                    sx={styles.sidebarDesktop}
+                />
+                <AppSideBar
+                    onClose={handleDrawerToggle}
+                    open={isVisibleDrawer}
+                    sx={styles.sidebarMobiel}
+                    variant='temporary'
+                />
             </Box>
 
             <Box component="main" sx={styles.main}>

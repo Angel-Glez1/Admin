@@ -1,11 +1,16 @@
 import { FC } from 'react';
-import { Drawer, DrawerProps, Box, ListItem, List, ListItemButton, ListItemIcon, ListItemText, Typography, Divider, Button, Grid } from '@mui/material';
-import { NoteAltOutlined, Logout, Login } from '@mui/icons-material';
+import { NoteAltOutlined, CalendarMonthOutlined, EuroOutlined } from '@mui/icons-material';
+import { Box, Drawer, DrawerProps, ListItem, Typography } from '@mui/material';
+import { DashboardRoutes } from '../constants';
 import { IStyles } from '../theme';
+import { AppSideBarItem } from './AppSideBarItem';
 
 
-
-interface Props extends DrawerProps { }
+const items = [
+    { text: 'Notes', Icon: NoteAltOutlined, link: DashboardRoutes.NOTES },
+    { text: 'Finances', Icon: EuroOutlined, link: DashboardRoutes.FINANCES },
+    { text: 'Calendar', Icon: CalendarMonthOutlined, link: DashboardRoutes.CALENDAR },
+]
 
 
 const styles: IStyles = {
@@ -14,12 +19,15 @@ const styles: IStyles = {
         display: 'flex',
         justifyContent: 'center'
     },
-    asideBarItem: {
+    list: {
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'column',
     },
 }
+
+
+interface Props extends DrawerProps { }
+
 
 export const AppSideBar: FC<Props> = (props) => {
     return (
@@ -33,30 +41,8 @@ export const AppSideBar: FC<Props> = (props) => {
                 </Typography>
             </ListItem>
 
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
-
-
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '50%' }} >
-                    <div>
-                        <NoteAltOutlined />
-                    </div>
-                    <div>
-                        <Typography ml='1rem' >Dashboard</Typography>
-                    </div>
-                </Box>
-
-
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '50%' }} >
-                <div>
-                        <NoteAltOutlined />
-                    </div>
-                    <div>
-                        <Typography ml='1rem' >Notas</Typography>
-                    </div>
-                </Box>
-
-
+            <Box sx={styles.list}>
+                {items.map(item => <AppSideBarItem key={item.text} {...item} />)}
             </Box>
 
         </Drawer>

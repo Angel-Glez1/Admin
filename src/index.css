@@ -4,12 +4,8 @@
 }
 
 
-
-
-
-
-.hover-shadow :hover{
-   background-color: rgba(0, 120, 240, 0.25); 
+.active{
+    background-color: rgba(0, 120, 240, 0.07),
 }
 
 
