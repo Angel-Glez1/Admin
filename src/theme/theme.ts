@@ -28,7 +28,15 @@ export const theme = createTheme({
       defaultProps: {
         fullWidth: true
       }
+    },
+    MuiCard: {
+      defaultProps: {
+        sx: {
+          boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.10)'
+        }
+      }
     }
+
   }
 });
 

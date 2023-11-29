@@ -22,9 +22,10 @@ export const AppRouter = () => {
 
     return statusAuth === StatusAuth.CHECKING ? <FallBack /> : (
         <Routes>
-            {statusAuth === StatusAuth.NOT_AUTHENTICATED
-                ? <Route path={`/${PublicRoutes.LOGIN}`} element={<Login />} />
-                : <Route path='/*' element={<Private />} />
+            {
+                statusAuth === StatusAuth.NOT_AUTHENTICATED
+                    ? <Route path={`/${PublicRoutes.LOGIN}`} element={<Login />} />
+                    : <Route path='/*' element={<Private />} />
             }
 
             <Route path='/*' element={<Navigate to={`/${PublicRoutes.LOGIN}`} />} />

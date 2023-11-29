@@ -24,3 +24,12 @@ export const startCheckAuth = () => {
         dispatch(onLogin({ token }));
     }
 }
+
+
+export const startLogout = () => {
+    return async (dispatch: AppDispatch, getState: GetState) => {
+
+        localStorage.removeItem('token-admin');
+        dispatch(onLogout());
+    }
+}
